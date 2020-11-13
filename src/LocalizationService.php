@@ -18,7 +18,7 @@ class LocalizationService
     public function setLocale(string $locale = null)
     {
         if (!$locale) {
-            $locale = Request::segment(1);
+            $locale = Request::segment($this->config['segment']);
         }
 
         if ($this->validateLocale($locale)) {
